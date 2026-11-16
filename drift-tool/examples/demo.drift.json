@@ -1,0 +1,746 @@
+{
+  "version": 1,
+  "name": "Παράδειγμα – σύνθετα δεδομένα (όχι πραγματικά)",
+  "models": [
+    {
+      "id": "mdl_563d77c0",
+      "name": "Κτίριο 14 ορόφων",
+      "default_h": 4.0,
+      "heights": {
+        "1": 3.8,
+        "2": 4.2,
+        "3": 3.8,
+        "4": 4.2,
+        "5": 3.8,
+        "6": 4.2,
+        "7": 3.8,
+        "8": 4.2,
+        "9": 3.8,
+        "10": 4.2,
+        "11": 3.8,
+        "12": 4.2,
+        "13": 3.8,
+        "14": 4.2
+      },
+      "base_u": 0.0,
+      "base_confirmed": true
+    }
+  ],
+  "curves": [
+    {
+      "id": "crv_demo_0",
+      "name": "Wind-CBS",
+      "model_id": "mdl_563d77c0",
+      "direction": "X",
+      "case": "WIND +X",
+      "provenance": "static",
+      "units_u": "mm",
+      "units_h": "m",
+      "rows": [
+        {
+          "floor": 0.0,
+          "u": 0.0,
+          "h": null
+        },
+        {
+          "floor": 1.0,
+          "u": 2.2,
+          "h": 3.8
+        },
+        {
+          "floor": 2.0,
+          "u": 4.8,
+          "h": 4.2
+        },
+        {
+          "floor": 3.0,
+          "u": 7.3,
+          "h": 3.8
+        },
+        {
+          "floor": 4.0,
+          "u": 10.4,
+          "h": 4.2
+        },
+        {
+          "floor": 5.0,
+          "u": 13.6,
+          "h": 3.8
+        },
+        {
+          "floor": 6.0,
+          "u": 17.5,
+          "h": 4.2
+        },
+        {
+          "floor": 7.0,
+          "u": 21.4,
+          "h": 3.8
+        },
+        {
+          "floor": 8.0,
+          "u": 26.2,
+          "h": 4.2
+        },
+        {
+          "floor": 9.0,
+          "u": 31.0,
+          "h": 3.8
+        },
+        {
+          "floor": 10.0,
+          "u": 36.8,
+          "h": 4.2
+        },
+        {
+          "floor": 11.0,
+          "u": 42.7,
+          "h": 3.8
+        },
+        {
+          "floor": 12.0,
+          "u": 49.8,
+          "h": 4.2
+        },
+        {
+          "floor": 13.0,
+          "u": 56.7,
+          "h": 3.8
+        },
+        {
+          "floor": 14.0,
+          "u": 65.1,
+          "h": 4.2
+        }
+      ],
+      "color": "#1f4e79",
+      "width": 2.0,
+      "dash": "solid",
+      "visible": true,
+      "note": "Κτίριο αναφοράς"
+    },
+    {
+      "id": "crv_demo_1",
+      "name": "Wind-BIE",
+      "model_id": "mdl_563d77c0",
+      "direction": "Y",
+      "case": "WIND +Y",
+      "provenance": "static",
+      "units_u": "mm",
+      "units_h": "m",
+      "rows": [
+        {
+          "floor": 0.0,
+          "u": 0.0,
+          "h": null
+        },
+        {
+          "floor": 1.0,
+          "u": 2.4,
+          "h": 3.8
+        },
+        {
+          "floor": 2.0,
+          "u": 5.3,
+          "h": 4.2
+        },
+        {
+          "floor": 3.0,
+          "u": 8.2,
+          "h": 3.8
+        },
+        {
+          "floor": 4.0,
+          "u": 11.7,
+          "h": 4.2
+        },
+        {
+          "floor": 5.0,
+          "u": 15.2,
+          "h": 3.8
+        },
+        {
+          "floor": 6.0,
+          "u": 19.6,
+          "h": 4.2
+        },
+        {
+          "floor": 7.0,
+          "u": 23.9,
+          "h": 3.8
+        },
+        {
+          "floor": 8.0,
+          "u": 29.3,
+          "h": 4.2
+        },
+        {
+          "floor": 9.0,
+          "u": 34.7,
+          "h": 3.8
+        },
+        {
+          "floor": 10.0,
+          "u": 41.3,
+          "h": 4.2
+        },
+        {
+          "floor": 11.0,
+          "u": 47.8,
+          "h": 3.8
+        },
+        {
+          "floor": 12.0,
+          "u": 55.7,
+          "h": 4.2
+        },
+        {
+          "floor": 13.0,
+          "u": 63.5,
+          "h": 3.8
+        },
+        {
+          "floor": 14.0,
+          "u": 73.0,
+          "h": 4.2
+        }
+      ],
+      "color": "#c00000",
+      "width": 2.0,
+      "dash": "dash",
+      "visible": true,
+      "note": "Παραλλαγή B"
+    },
+    {
+      "id": "crv_demo_2",
+      "name": "Earthquake-CSB",
+      "model_id": "mdl_563d77c0",
+      "direction": "X",
+      "case": "EQ +X",
+      "provenance": "static",
+      "units_u": "mm",
+      "units_h": "m",
+      "rows": [
+        {
+          "floor": 0.0,
+          "u": 0.0,
+          "h": null
+        },
+        {
+          "floor": 1.0,
+          "u": 6.2,
+          "h": 3.8
+        },
+        {
+          "floor": 2.0,
+          "u": 13.3,
+          "h": 4.2
+        },
+        {
+          "floor": 3.0,
+          "u": 20.0,
+          "h": 3.8
+        },
+        {
+          "floor": 4.0,
+          "u": 27.7,
+          "h": 4.2
+        },
+        {
+          "floor": 5.0,
+          "u": 34.9,
+          "h": 3.8
+        },
+        {
+          "floor": 6.0,
+          "u": 43.2,
+          "h": 4.2
+        },
+        {
+          "floor": 7.0,
+          "u": 51.0,
+          "h": 3.8
+        },
+        {
+          "floor": 8.0,
+          "u": 60.0,
+          "h": 4.2
+        },
+        {
+          "floor": 9.0,
+          "u": 68.4,
+          "h": 3.8
+        },
+        {
+          "floor": 10.0,
+          "u": 78.2,
+          "h": 4.2
+        },
+        {
+          "floor": 11.0,
+          "u": 87.4,
+          "h": 3.8
+        },
+        {
+          "floor": 12.0,
+          "u": 98.1,
+          "h": 4.2
+        },
+        {
+          "floor": 13.0,
+          "u": 108.2,
+          "h": 3.8
+        },
+        {
+          "floor": 14.0,
+          "u": 120.0,
+          "h": 4.2
+        }
+      ],
+      "color": "#2e7d32",
+      "width": 2.4,
+      "dash": "solid",
+      "visible": true,
+      "note": "Φάσμα σχεδιασμού"
+    },
+    {
+      "id": "crv_demo_3",
+      "name": "Earthquake-BIE",
+      "model_id": "mdl_563d77c0",
+      "direction": "Y",
+      "case": "EQ +Y",
+      "provenance": "static",
+      "units_u": "mm",
+      "units_h": "m",
+      "rows": [
+        {
+          "floor": 0.0,
+          "u": 0.0,
+          "h": null
+        },
+        {
+          "floor": 1.0,
+          "u": 6.7,
+          "h": 3.8
+        },
+        {
+          "floor": 2.0,
+          "u": 14.4,
+          "h": 4.2
+        },
+        {
+          "floor": 3.0,
+          "u": 21.6,
+          "h": 3.8
+        },
+        {
+          "floor": 4.0,
+          "u": 29.9,
+          "h": 4.2
+        },
+        {
+          "floor": 5.0,
+          "u": 37.7,
+          "h": 3.8
+        },
+        {
+          "floor": 6.0,
+          "u": 46.6,
+          "h": 4.2
+        },
+        {
+          "floor": 7.0,
+          "u": 55.1,
+          "h": 3.8
+        },
+        {
+          "floor": 8.0,
+          "u": 64.7,
+          "h": 4.2
+        },
+        {
+          "floor": 9.0,
+          "u": 73.9,
+          "h": 3.8
+        },
+        {
+          "floor": 10.0,
+          "u": 84.4,
+          "h": 4.2
+        },
+        {
+          "floor": 11.0,
+          "u": 94.4,
+          "h": 3.8
+        },
+        {
+          "floor": 12.0,
+          "u": 106.0,
+          "h": 4.2
+        },
+        {
+          "floor": 13.0,
+          "u": 116.9,
+          "h": 3.8
+        },
+        {
+          "floor": 14.0,
+          "u": 129.6,
+          "h": 4.2
+        }
+      ],
+      "color": "#ed7d31",
+      "width": 2.4,
+      "dash": "dash",
+      "visible": true,
+      "note": "Φάσμα σχεδιασμού"
+    },
+    {
+      "id": "crv_demo_4",
+      "name": "Outrigger 1",
+      "model_id": "mdl_563d77c0",
+      "direction": "X",
+      "case": "EQ +X",
+      "provenance": "static",
+      "units_u": "mm",
+      "units_h": "m",
+      "rows": [
+        {
+          "floor": 0.0,
+          "u": 0.0,
+          "h": null
+        },
+        {
+          "floor": 1.0,
+          "u": 4.3,
+          "h": 3.8
+        },
+        {
+          "floor": 2.0,
+          "u": 9.9,
+          "h": 4.2
+        },
+        {
+          "floor": 3.0,
+          "u": 15.5,
+          "h": 3.8
+        },
+        {
+          "floor": 4.0,
+          "u": 22.5,
+          "h": 4.2
+        },
+        {
+          "floor": 5.0,
+          "u": 29.4,
+          "h": 3.8
+        },
+        {
+          "floor": 6.0,
+          "u": 37.9,
+          "h": 4.2
+        },
+        {
+          "floor": 7.0,
+          "u": 46.2,
+          "h": 3.8
+        },
+        {
+          "floor": 8.0,
+          "u": 56.0,
+          "h": 4.2
+        },
+        {
+          "floor": 9.0,
+          "u": 65.2,
+          "h": 3.8
+        },
+        {
+          "floor": 10.0,
+          "u": 74.6,
+          "h": 4.2
+        },
+        {
+          "floor": 11.0,
+          "u": 82.5,
+          "h": 3.8
+        },
+        {
+          "floor": 12.0,
+          "u": 90.4,
+          "h": 4.2
+        },
+        {
+          "floor": 13.0,
+          "u": 97.0,
+          "h": 3.8
+        },
+        {
+          "floor": 14.0,
+          "u": 103.5,
+          "h": 4.2
+        }
+      ],
+      "color": "#7030a0",
+      "width": 2.0,
+      "dash": "solid",
+      "visible": true,
+      "note": "Outrigger 1"
+    },
+    {
+      "id": "crv_demo_5",
+      "name": "Outrigger 2",
+      "model_id": "mdl_563d77c0",
+      "direction": "X",
+      "case": "EQ +X",
+      "provenance": "static",
+      "units_u": "mm",
+      "units_h": "m",
+      "rows": [
+        {
+          "floor": 0.0,
+          "u": 0.0,
+          "h": null
+        },
+        {
+          "floor": 1.0,
+          "u": 4.1,
+          "h": 3.8
+        },
+        {
+          "floor": 2.0,
+          "u": 9.3,
+          "h": 4.2
+        },
+        {
+          "floor": 3.0,
+          "u": 14.7,
+          "h": 3.8
+        },
+        {
+          "floor": 4.0,
+          "u": 21.3,
+          "h": 4.2
+        },
+        {
+          "floor": 5.0,
+          "u": 27.9,
+          "h": 3.8
+        },
+        {
+          "floor": 6.0,
+          "u": 35.9,
+          "h": 4.2
+        },
+        {
+          "floor": 7.0,
+          "u": 43.7,
+          "h": 3.8
+        },
+        {
+          "floor": 8.0,
+          "u": 53.1,
+          "h": 4.2
+        },
+        {
+          "floor": 9.0,
+          "u": 61.8,
+          "h": 3.8
+        },
+        {
+          "floor": 10.0,
+          "u": 70.7,
+          "h": 4.2
+        },
+        {
+          "floor": 11.0,
+          "u": 78.1,
+          "h": 3.8
+        },
+        {
+          "floor": 12.0,
+          "u": 85.7,
+          "h": 4.2
+        },
+        {
+          "floor": 13.0,
+          "u": 91.9,
+          "h": 3.8
+        },
+        {
+          "floor": 14.0,
+          "u": 98.1,
+          "h": 4.2
+        }
+      ],
+      "color": "#00838f",
+      "width": 2.0,
+      "dash": "longdash",
+      "visible": true,
+      "note": "Outrigger 2"
+    },
+    {
+      "id": "crv_demo_6",
+      "name": "Outrigger 3",
+      "model_id": "mdl_563d77c0",
+      "direction": "X",
+      "case": "EQ +X",
+      "provenance": "static",
+      "units_u": "mm",
+      "units_h": "m",
+      "rows": [
+        {
+          "floor": 0.0,
+          "u": 0.0,
+          "h": null
+        },
+        {
+          "floor": 1.0,
+          "u": 3.9,
+          "h": 3.8
+        },
+        {
+          "floor": 2.0,
+          "u": 8.9,
+          "h": 4.2
+        },
+        {
+          "floor": 3.0,
+          "u": 14.0,
+          "h": 3.8
+        },
+        {
+          "floor": 4.0,
+          "u": 20.3,
+          "h": 4.2
+        },
+        {
+          "floor": 5.0,
+          "u": 26.7,
+          "h": 3.8
+        },
+        {
+          "floor": 6.0,
+          "u": 34.3,
+          "h": 4.2
+        },
+        {
+          "floor": 7.0,
+          "u": 41.8,
+          "h": 3.8
+        },
+        {
+          "floor": 8.0,
+          "u": 50.7,
+          "h": 4.2
+        },
+        {
+          "floor": 9.0,
+          "u": 59.0,
+          "h": 3.8
+        },
+        {
+          "floor": 10.0,
+          "u": 67.6,
+          "h": 4.2
+        },
+        {
+          "floor": 11.0,
+          "u": 74.7,
+          "h": 3.8
+        },
+        {
+          "floor": 12.0,
+          "u": 81.9,
+          "h": 4.2
+        },
+        {
+          "floor": 13.0,
+          "u": 87.8,
+          "h": 3.8
+        },
+        {
+          "floor": 14.0,
+          "u": 93.7,
+          "h": 4.2
+        }
+      ],
+      "color": "#c2185b",
+      "width": 2.0,
+      "dash": "dashdot",
+      "visible": true,
+      "note": "Outrigger 3"
+    }
+  ],
+  "diagrams": [
+    {
+      "id": "dia_demo_1",
+      "name": "Άνεμος & Σεισμός",
+      "limit_input": "1/500",
+      "limit": 0.002,
+      "x_mode": "ratio",
+      "y_mode": "floor",
+      "show_grid": true,
+      "legend_outside": true,
+      "curve_ids": [
+        "crv_demo_0",
+        "crv_demo_1",
+        "crv_demo_2",
+        "crv_demo_3"
+      ],
+      "mean_ids": [
+        "crv_demo_0",
+        "crv_demo_1"
+      ],
+      "x_min": null,
+      "x_max": null,
+      "note": "Συνθετικά δεδομένα για επίδειξη. Χωρίς απαίτηση πραγματικών μετρήσεων."
+    },
+    {
+      "id": "dia_demo_2",
+      "name": "Θέσεις outrigger",
+      "limit_input": "1/400",
+      "limit": 0.0025,
+      "x_mode": "ratio",
+      "y_mode": "floor",
+      "show_grid": true,
+      "legend_outside": true,
+      "curve_ids": [
+        "crv_demo_2",
+        "crv_demo_3",
+        "crv_demo_4",
+        "crv_demo_5",
+        "crv_demo_6"
+      ],
+      "mean_ids": [],
+      "x_min": null,
+      "x_max": null,
+      "note": "Σύγκριση τριών θέσεων outrigger – και πάλι συνθετικά δεδομένα."
+    },
+    {
+      "id": "dia_demo_3",
+      "name": "Όλες οι καμπύλες",
+      "limit_input": "0,2%",
+      "limit": 0.002,
+      "x_mode": "percent",
+      "y_mode": "floor",
+      "show_grid": true,
+      "legend_outside": true,
+      "curve_ids": [
+        "crv_demo_0",
+        "crv_demo_1",
+        "crv_demo_2",
+        "crv_demo_3",
+        "crv_demo_4",
+        "crv_demo_5",
+        "crv_demo_6"
+      ],
+      "mean_ids": [],
+      "x_min": null,
+      "x_max": null,
+      "note": "Ίδια δεδομένα με ποσοστιαίο άξονα."
+    }
+  ],
+  "active_diagram": "dia_demo_1",
+  "active_curve": "crv_demo_0"
+}

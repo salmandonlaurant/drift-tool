@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drift Tool — διαγράμματα drift</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><span class="logo"></span> Drift Tool</div>
+  <input id="projectName" class="proj-name" spellcheck="false" data-i18n-title="project_name">
+  <div class="spacer"></div>
+  <button id="langBtn" class="btn lang-btn" data-act="lang" data-i18n-title="lang_title">
+    <span class="globe" aria-hidden="true">◎</span><span id="langLabel">EN</span>
+  </button>
+  <span class="vsep"></span>
+  <button class="btn" data-act="save" data-i18n="save" data-i18n-title="save_title">Αποθήκευση</button>
+  <button class="btn" data-act="open" data-i18n="open" data-i18n-title="open_title">Άνοιγμα</button>
+  <span class="vsep"></span>
+  <button class="btn primary" data-act="xlsx" data-i18n="excel" data-i18n-title="excel_title">Excel</button>
+  <button class="btn" data-act="svg" data-i18n-title="svg_title">SVG</button>
+  <button class="btn" data-act="png" data-i18n-title="png_title">PNG</button>
+  <button class="btn" data-act="print" data-i18n="pdf" data-i18n-title="pdf_title">PDF</button>
+  <input type="file" id="fileInput" accept=".json,application/json" hidden>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <section>
+      <h3><span data-i18n="diagrams">Διαγράμματα</span>
+        <button class="mini" data-act="add-diagram" data-i18n-title="new_diagram" title="Νέο διάγραμμα">+</button>
+      </h3>
+      <ul id="diagramList" class="list"></ul>
+    </section>
+    <section>
+      <h3><span data-i18n="curves">Καμπύλες</span>
+        <button class="mini" data-act="add-curve" data-i18n-title="new_curve" title="Νέα καμπύλη">+</button>
+      </h3>
+      <ul id="curveList" class="list"></ul>
+    </section>
+    <section class="hint">
+      <p data-i18n-html="flow_html"><b>Ροή:</b> επικόλληση από SAP → έλεγχος → διάγραμμα.</p>
+      <p data-i18n="flow_text">Δεκαδικό κόμμα ή τελεία. Μονάδες mm ή m. Το ύψος κάθε ορόφου είναι η
+      απόσταση από τον προηγούμενο όροφο.</p>
+      <p><a href="#" data-act="load-demo" data-i18n="load_demo">Φόρτωση demo έργου</a>
+        <span data-i18n="demo_hint">— 3 διαγράμματα, 7 καμπύλες, συνθετικά δεδομένα.</span></p>
+    </section>
+  </aside>
+
+  <section class="editor">
+    <nav class="tabs">
+      <button class="tab-btn" data-tab="data" data-i18n="tab_data">Δεδομένα καμπύλης</button>
+      <button class="tab-btn" data-tab="diagram" data-i18n="tab_diagram">Διάγραμμα</button>
+      <button class="tab-btn" data-tab="model" data-i18n="tab_model">Μοντέλο / Ύψη</button>
+    </nav>
+    <div id="tab-data" class="tab"></div>
+    <div id="tab-diagram" class="tab"></div>
+    <div id="tab-model" class="tab"></div>
+  </section>
+
+  <section class="chartpane">
+    <div class="chart-head">
+      <div id="chartTitle" class="chart-title"></div>
+      <div class="chart-actions">
+        <button class="mini" data-act="zoom-out" data-i18n-title="zoom_out" title="Μικρότερο">−</button>
+        <button class="mini" data-act="zoom-in" data-i18n-title="zoom_in" title="Μεγαλύτερο">+</button>
+      </div>
+    </div>
+    <div id="chartHost" class="chart-host"></div>
+    <div id="chartStats" class="chart-stats"></div>
+    <div id="warnings" class="warnings"></div>
+  </section>
+</main>
+
+<div id="tooltip" class="tooltip" hidden></div>
+<div id="toast" class="toast" hidden></div>
+
+<script src="/static/i18n.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

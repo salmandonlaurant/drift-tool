@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" font-family="Segoe UI, Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="1600" height="1050" fill="#ffffff"/>
+<text x="74.00" y="26.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="15" fill="#1a1a1a" text-anchor="start" font-weight="600">Άνεμος &amp; Σεισμός</text>
+<g class="grid" stroke="#e3e6ea" stroke-width="1">
+<line x1="74.00" y1="58" x2="74.00" y2="988"/>
+<line x1="402.00" y1="58" x2="402.00" y2="988"/>
+<line x1="730.00" y1="58" x2="730.00" y2="988"/>
+<line x1="1058.00" y1="58" x2="1058.00" y2="988"/>
+<line x1="1386.00" y1="58" x2="1386.00" y2="988"/>
+<line x1="74" y1="988.00" x2="1386" y2="988.00"/>
+<line x1="74" y1="922.87" x2="1386" y2="922.87"/>
+<line x1="74" y1="857.75" x2="1386" y2="857.75"/>
+<line x1="74" y1="792.62" x2="1386" y2="792.62"/>
+<line x1="74" y1="727.50" x2="1386" y2="727.50"/>
+<line x1="74" y1="662.37" x2="1386" y2="662.37"/>
+<line x1="74" y1="597.24" x2="1386" y2="597.24"/>
+<line x1="74" y1="532.12" x2="1386" y2="532.12"/>
+<line x1="74" y1="466.99" x2="1386" y2="466.99"/>
+<line x1="74" y1="401.87" x2="1386" y2="401.87"/>
+<line x1="74" y1="336.74" x2="1386" y2="336.74"/>
+<line x1="74" y1="271.61" x2="1386" y2="271.61"/>
+<line x1="74" y1="206.49" x2="1386" y2="206.49"/>
+<line x1="74" y1="141.36" x2="1386" y2="141.36"/>
+<line x1="74" y1="76.24" x2="1386" y2="76.24"/>
+<line x1="74" y1="11.11" x2="1386" y2="11.11"/>
+</g>
+<g stroke="#4a4a4a" stroke-width="1.1" fill="none"><line x1="74" y1="988" x2="1386" y2="988"/><line x1="74" y1="58" x2="74" y2="988"/></g>
+<line x1="74.00" y1="988" x2="74.00" y2="993" stroke="#4a4a4a" stroke-width="1"/>
+<text x="74.00" y="1006.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="middle" font-weight="normal">0</text>
+<line x1="402.00" y1="988" x2="402.00" y2="993" stroke="#4a4a4a" stroke-width="1"/>
+<text x="402.00" y="1006.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="middle" font-weight="normal">0,001</text>
+<line x1="730.00" y1="988" x2="730.00" y2="993" stroke="#4a4a4a" stroke-width="1"/>
+<text x="730.00" y="1006.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="middle" font-weight="normal">0,002</text>
+<line x1="1058.00" y1="988" x2="1058.00" y2="993" stroke="#4a4a4a" stroke-width="1"/>
+<text x="1058.00" y="1006.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="middle" font-weight="normal">0,003</text>
+<line x1="1386.00" y1="988" x2="1386.00" y2="993" stroke="#4a4a4a" stroke-width="1"/>
+<text x="1386.00" y="1006.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="middle" font-weight="normal">0,004</text>
+<line x1="69" y1="988.00" x2="74" y2="988.00" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="991.50" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">0</text>
+<line x1="69" y1="922.87" x2="74" y2="922.87" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="926.37" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">1</text>
+<line x1="69" y1="857.75" x2="74" y2="857.75" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="861.25" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">2</text>
+<line x1="69" y1="792.62" x2="74" y2="792.62" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="796.12" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">3</text>
+<line x1="69" y1="727.50" x2="74" y2="727.50" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="731.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">4</text>
+<line x1="69" y1="662.37" x2="74" y2="662.37" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="665.87" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">5</text>
+<line x1="69" y1="597.24" x2="74" y2="597.24" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="600.74" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">6</text>
+<line x1="69" y1="532.12" x2="74" y2="532.12" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="535.62" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">7</text>
+<line x1="69" y1="466.99" x2="74" y2="466.99" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="470.49" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">8</text>
+<line x1="69" y1="401.87" x2="74" y2="401.87" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="405.37" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">9</text>
+<line x1="69" y1="336.74" x2="74" y2="336.74" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="340.24" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">10</text>
+<line x1="69" y1="271.61" x2="74" y2="271.61" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="275.11" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">11</text>
+<line x1="69" y1="206.49" x2="74" y2="206.49" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="209.99" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">12</text>
+<line x1="69" y1="141.36" x2="74" y2="141.36" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="144.86" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">13</text>
+<line x1="69" y1="76.24" x2="74" y2="76.24" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="79.74" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">14</text>
+<line x1="69" y1="11.11" x2="74" y2="11.11" stroke="#4a4a4a" stroke-width="1"/>
+<text x="65.00" y="14.61" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#444" text-anchor="end" font-weight="normal">15</text>
+<text x="730.00" y="1036.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="11.5" fill="#222" text-anchor="middle" font-weight="normal">Σχετική μετακίνηση ορόφου  d  [–]</text>
+<text x="20.00" y="523.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="11.5" fill="#222" text-anchor="middle" font-weight="normal" transform="rotate(-90 20 523.0)">Όροφος</text>
+<line x1="730.00" y1="58" x2="730.00" y2="988" stroke="#d32020" stroke-width="2" stroke-dasharray="7 4" class="limit-line"/>
+<rect x="628.60" y="51" width="96.4" height="16" fill="#ffffff" opacity="0.85"/>
+<text x="723.00" y="63.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10" fill="#d32020" text-anchor="end" font-weight="600">Limit 0,0020</text>
+<defs><clipPath id="plotclip"><rect x="74" y="56" width="1312" height="934"/></clipPath></defs>
+<g clip-path="url(#plotclip)">
+<g class="curve" data-curve-id="crv_demo_0" data-name="Wind-CBS">
+<path d="M 263.89 988.00 L 263.89 922.87 L 277.05 922.87 L 277.05 857.75 L 289.79 857.75 L 289.79 792.62 L 316.10 792.62 L 316.10 727.50 L 350.21 727.50 L 350.21 662.37 L 378.57 662.37 L 378.57 597.24 L 410.63 597.24 L 410.63 532.12 L 448.86 532.12 L 448.86 466.99 L 488.32 466.99 L 488.32 401.87 L 526.95 401.87 L 526.95 336.74 L 583.26 336.74 L 583.26 271.61 L 628.48 271.61 L 628.48 206.49 L 669.58 206.49 L 669.58 141.36 L 730.00 141.36 L 730.00 76.24" fill="none" stroke="#1f4e79" stroke-width="2.0" stroke-linejoin="miter" stroke-linecap="butt"/>
+</g>
+<g class="curve" data-curve-id="crv_demo_1" data-name="Wind-BIE">
+<path d="M 281.16 988.00 L 281.16 922.87 L 300.48 922.87 L 300.48 857.75 L 324.32 857.75 L 324.32 792.62 L 347.33 792.62 L 347.33 727.50 L 376.11 727.50 L 376.11 662.37 L 417.62 662.37 L 417.62 597.24 L 445.16 597.24 L 445.16 532.12 L 495.71 532.12 L 495.71 466.99 L 540.11 466.99 L 540.11 401.87 L 589.43 401.87 L 589.43 336.74 L 635.05 336.74 L 635.05 271.61 L 690.95 271.61 L 690.95 206.49 L 747.26 206.49 L 747.26 141.36 L 815.90 141.36 L 815.90 76.24" fill="none" stroke="#c00000" stroke-width="2.0" stroke-linejoin="miter" stroke-linecap="butt" stroke-dasharray="8 5"/>
+</g>
+<g class="curve" data-curve-id="crv_demo_2" data-name="Earthquake-CSB">
+<path d="M 609.16 988.00 L 609.16 922.87 L 628.48 922.87 L 628.48 857.75 L 652.32 857.75 L 652.32 792.62 L 675.33 792.62 L 675.33 727.50 L 695.47 727.50 L 695.47 662.37 L 722.19 662.37 L 722.19 597.24 L 747.26 597.24 L 747.26 532.12 L 776.86 532.12 L 776.86 466.99 L 799.05 466.99 L 799.05 401.87 L 839.33 401.87 L 839.33 336.74 L 868.11 336.74 L 868.11 271.61 L 909.62 271.61 L 909.62 206.49 L 945.79 206.49 L 945.79 141.36 L 995.52 141.36 L 995.52 76.24" fill="none" stroke="#2e7d32" stroke-width="2.4" stroke-linejoin="miter" stroke-linecap="butt"/>
+</g>
+<g class="curve" data-curve-id="crv_demo_3" data-name="Earthquake-BIE">
+<path d="M 652.32 988.00 L 652.32 922.87 L 675.33 922.87 L 675.33 857.75 L 695.47 857.75 L 695.47 792.62 L 722.19 792.62 L 722.19 727.50 L 747.26 727.50 L 747.26 662.37 L 769.05 662.37 L 769.05 597.24 L 807.68 597.24 L 807.68 532.12 L 823.71 532.12 L 823.71 466.99 L 868.11 466.99 L 868.11 401.87 L 894.00 401.87 L 894.00 336.74 L 937.16 336.74 L 937.16 271.61 L 979.90 271.61 L 979.90 206.49 L 1014.84 206.49 L 1014.84 141.36 L 1065.81 141.36 L 1065.81 76.24" fill="none" stroke="#ed7d31" stroke-width="2.4" stroke-linejoin="miter" stroke-linecap="butt" stroke-dasharray="8 5"/>
+</g>
+<g class="curve mean" data-name="Μέση καμπύλη">
+<path d="M 272.53 988.00 L 272.53 922.87 L 288.76 922.87 L 288.76 857.75 L 307.05 857.75 L 307.05 792.62 L 331.71 792.62 L 331.71 727.50 L 363.16 727.50 L 363.16 662.37 L 398.10 662.37 L 398.10 597.24 L 427.89 597.24 L 427.89 532.12 L 472.29 532.12 L 472.29 466.99 L 514.21 466.99 L 514.21 401.87 L 558.19 401.87 L 558.19 336.74 L 609.16 336.74 L 609.16 271.61 L 659.71 271.61 L 659.71 206.49 L 708.42 206.49 L 708.42 141.36 L 772.95 141.36 L 772.95 76.24" fill="none" stroke="#111111" stroke-width="2.2" stroke-dasharray="12 5"/>
+</g>
+</g>
+<g class="legend" data-curve-id="crv_demo_0" data-name="Wind-CBS">
+<line x1="1412" y1="64" x2="1438" y2="64" stroke="#1f4e79" stroke-width="2.0"/>
+<text x="1444.00" y="68.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10.5" fill="#222" text-anchor="start" font-weight="normal">Wind-CBS</text>
+</g>
+<g class="legend" data-curve-id="crv_demo_1" data-name="Wind-BIE">
+<line x1="1412" y1="84" x2="1438" y2="84" stroke="#c00000" stroke-width="2.0" stroke-dasharray="8 5"/>
+<text x="1444.00" y="88.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10.5" fill="#222" text-anchor="start" font-weight="normal">Wind-BIE</text>
+</g>
+<g class="legend" data-curve-id="crv_demo_2" data-name="Earthquake-CSB">
+<line x1="1412" y1="104" x2="1438" y2="104" stroke="#2e7d32" stroke-width="2.4"/>
+<text x="1444.00" y="108.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10.5" fill="#222" text-anchor="start" font-weight="normal">Earthquake-CSB</text>
+</g>
+<g class="legend" data-curve-id="crv_demo_3" data-name="Earthquake-BIE">
+<line x1="1412" y1="124" x2="1438" y2="124" stroke="#ed7d31" stroke-width="2.4" stroke-dasharray="8 5"/>
+<text x="1444.00" y="128.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10.5" fill="#222" text-anchor="start" font-weight="normal">Earthquake-BIE</text>
+</g>
+<g class="legend" data-curve-id="__mean__" data-name="Μέση καμπύλη">
+<line x1="1412" y1="144" x2="1438" y2="144" stroke="#000000" stroke-width="2.0" stroke-dasharray="8 5"/>
+<text x="1444.00" y="148.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="10.5" fill="#222" text-anchor="start" font-weight="normal">Μέση καμπύλη</text>
+</g>
+<text x="74.00" y="1048.00" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="9.5" fill="#777" text-anchor="start" font-weight="normal">Συνθετικά δεδομένα για επίδειξη. Χωρίς απαίτηση πραγματικών μετρήσεων.</text>
+</svg>
