@@ -291,10 +291,14 @@ function renderData() {
       <button class="btn" data-act="add-row">${esc(t('add_row'))}</button>
       <button class="btn" data-act="del-row">${esc(t('del_last'))}</button>
       <button class="btn" data-act="sort-rows">${esc(t('sort_rows'))}</button>
+      <button class="btn" data-act="paste-clipboard" title="${esc(t('paste_clipboard_title'))}">${esc(t('paste_clipboard'))}</button>
       <label class="check" style="margin-left:8px">
         <input type="checkbox" id="writeHeights" ${S.writeHeights ? 'checked' : ''}>
         ${esc(t('write_heights'))}
       </label>
+    </div>
+    <div class="small muted" style="margin-top:8px">
+      ${esc(t('paste_table_hint'))}
     </div>
     <div class="small muted" style="margin-top:8px">
       ${activeDiagram().limit !== null && activeDiagram().limit !== undefined
@@ -675,6 +679,7 @@ function bindEvents() {
   }));
   document.addEventListener('change', onChange);
   document.addEventListener('input', onInput);
+  document.addEventListener('paste', onPasteGrid);
   document.addEventListener('dblclick', onDblClick);
   $('#projectName').addEventListener('input', (e) => { S.P.name = e.target.value; persistDebounced(); });
   $('#fileInput').addEventListener('change', onFileOpen);
@@ -790,11 +795,14 @@ async function onClick(e) {
     analyzeCurve();
     return;
   }
-  if (act === 'sort-rows') {
-    const c = activeCurve();
-    c.rows.sort((a, b) => (Number(a.floor) || 0) - (Number(b.floor) || 0));
-    renderData();
-    analyzeCurve();
+  if (act === 'paste-clipboard') {
+    e.preventDefault();
+    try {
+      const text = await navigator.clipboard.readText();
+      await applyPasteText(text, false);
+    } catch (err) {
+      toast(t('err_paste_empty'), true);
+    }
     return;
   }
   if (act === 'heights-from-curve') {
@@ -928,6 +936,19 @@ function applyBind(t, path, full) {
   else softRefresh();
 }
 
+function onPasteGrid(e) {
+  const grid = $('#dataGrid');
+  if (!grid || !grid.contains(e.target)) return;
+  const cd = e.clipboardData || window.clipboardData;
+  const text = cd ? cd.getData('text') : '';
+  if (!text.trim()) return;
+  // only take over when the clipboard looks like a table (multiple cells/rows);
+  // otherwise let the browser paste into the single cell normally
+  if (!/[\t\n]/.test(text)) return;
+  e.preventDefault();
+  applyPasteText(text, false);
+}
+
 function onDblClick(e) {
   const li = e.target.closest('li[data-act]');
   if (!li) return;
@@ -972,16 +993,22 @@ async function applyPaste(append) {
   const box = $('#pasteBox');
   const text = box ? box.value : '';
   if (!text.trim()) { toast(t('err_paste_empty'), true); return; }
+  await applyPasteText(text, append);
+}
+
+async function applyPasteText(text, append) {
+  if (!text || !text.trim()) { toast(t('err_paste_empty'), true); return; }
   const c = activeCurve();
   const m = curveModel();
   try {
     const parsed = await api('/api/parse', {
       text,
-      has_header: $('#optHeader').value,
-      decimal: $('#optDecimal').value,
+      has_header: $('#optHeader') ? $('#optHeader').value : 'auto',
+      decimal: $('#optDecimal') ? $('#optDecimal').value : 'auto',
       units_u: c.units_u,
       units_h: c.units_h,
       default_h: null,
+      lang: LANG,
     });
     const rows = parsed.rows.map((r) => ({ floor: r.floor, u: r.u, h: r.h }));
     // fill missing heights from the model height table
