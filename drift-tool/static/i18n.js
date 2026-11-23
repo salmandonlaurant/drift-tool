@@ -37,6 +37,7 @@ const I18N = {
     tab_data: 'Δεδομένα καμπύλης',
     tab_diagram: 'Διάγραμμα',
     tab_model: 'Μοντέλο / Ύψη',
+    tab_outrigger: 'Βελτιστοποίηση ζυγοστατών',
     zoom_out: 'Μικρότερο',
     zoom_in: 'Μεγαλύτερο',
 
@@ -202,6 +203,7 @@ const I18N = {
     tab_data: 'Curve data',
     tab_diagram: 'Diagram',
     tab_model: 'Model / Heights',
+    tab_outrigger: 'Outrigger optimization',
     zoom_out: 'Smaller',
     zoom_in: 'Larger',
 

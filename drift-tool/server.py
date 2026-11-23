@@ -21,6 +21,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import driftcore as dc
 import driftchart as ch
 import driftexport as ex
+import outrigger as og
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder=os.path.join(BASE, "static"),
@@ -215,6 +216,20 @@ def api_export_xlsx():
         buf.seek(0)
         return send_file(buf, as_attachment=True, download_name=name,
                          mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.post("/api/outrigger")
+def api_outrigger():
+    b = request.get_json(force=True, silent=True) or {}
+    try:
+        lang = _lang(b)
+        params = b.get("params") or {}
+        data = og.compute_all(params)
+        svg1 = og.render_chart1(data, width=int(b.get("w1") or 720), height=int(b.get("h1") or 420), lang=lang)
+        svg2 = og.render_chart2(data, width=int(b.get("w2") or 720), height=int(b.get("h2") or 420), lang=lang)
+        return jsonify({"result": data, "svg1": svg1, "svg2": svg2})
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
 

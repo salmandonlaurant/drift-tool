@@ -204,6 +204,7 @@ function renderTab() {
   if (S.tab === 'data') renderData();
   if (S.tab === 'diagram') renderDiagram();
   if (S.tab === 'model') renderModel();
+  if (S.tab === 'outrigger') renderOuTrigger();
 }
 
 /* ============================================================ render: data tab */
@@ -708,7 +709,7 @@ async function onClick(e) {
     const d = newDiagramLocal();
     S.P.diagrams.push(d);
     S.P.active_diagram = d.id;
-    d.curve_ids = S.P.curves.map((c) => c.id);
+    d.curve_ids = [];
     renderAll();
     return;
   }
@@ -826,6 +827,7 @@ async function onClick(e) {
   if (act === 'png') { await exportPng(); return; }
   if (act === 'print') { window.print(); return; }
   if (act === 'zoom-in') { S.scale = Math.min(2, S.scale * 1.12); renderChart(); return; }
+  if (act === 'o-compute') { await computeOuTrigger(); return; }
   if (act === 'zoom-out') { S.scale = Math.max(0.6, S.scale / 1.12); renderChart(); return; }
 }
 
@@ -1134,6 +1136,155 @@ function newDiagramLocal() {
     x_max: null,
     note: '',
   };
+}
+
+/* ============================================================ outrigger tab */
+const O_DEFAULTS = {
+  system: 'CSB',
+  H: 250,
+  EI_w: 1e10,
+  EI_o: 1e9,
+  EI_c: 1e9,
+  GA_o: '',
+  auto_ga: true,
+  E: 3e10,
+  d: 8,
+  a: 10,
+  h: 4,
+  A_d: 0.5,
+  A_b: 0.3,
+  b: 20,
+  alpha: 1,
+  e_over_r: 0,
+  w: 1,
+  floor_heights: '',
+  eccs: '0, 1.52, 2.13, 2.85, 3.80, 4.75',
+};
+
+function O() {
+  if (!S.outrigger) S.outrigger = Object.assign({}, O_DEFAULTS);
+  return S.outrigger;
+}
+
+function renderOuTrigger() {
+  const o = O();
+  const num = (id, val, step) => `<input type="text" id="${id}" value="${esc(val === null || val === undefined ? '' : val)}" style="width:120px" ${step ? 'data-step="' + step + '"' : ''}>`;
+  $('#tab-outrigger').innerHTML = `
+  <div class="card">
+    <h4>Βελτιστοποίηση θέσης ζυγοστάτη</h4>
+    <div class="row">
+      <div class="field"><label>Σύστημα</label>
+        <select id="o_system">
+          <option value="CSB" ${o.system === 'CSB' ? 'selected' : ''}>CSB</option>
+          <option value="BIE" ${o.system === 'BIE' ? 'selected' : ''}>BIE</option>
+        </select></div>
+      <label class="check"><input type="checkbox" id="o_auto_ga" ${o.auto_ga ? 'checked' : ''}> Αυτόματος υπολογισμός GA_o</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>Χαρακτηριστικά κτιρίου</h4>
+    <div class="row">
+      <div class="field"><label>H [m]</label>${num('o_H', o.H)}</div>
+      <div class="field"><label>EI_w</label>${num('o_EI_w', o.EI_w)}</div>
+      <div class="field"><label>EI_o</label>${num('o_EI_o', o.EI_o)}</div>
+      <div class="field"><label>EI_c</label>${num('o_EI_c', o.EI_c)}</div>
+      <div class="field"><label>GA_o</label>${num('o_GA_o', o.GA_o)}</div>
+    </div>
+    <div class="row">
+      <div class="field"><label>E [Pa]</label>${num('o_E', o.E)}</div>
+      <div class="field"><label>d [m]</label>${num('o_d', o.d)}</div>
+      <div class="field"><label>a [m]</label>${num('o_a', o.a)}</div>
+      <div class="field"><label>h [m]</label>${num('o_h', o.h)}</div>
+    </div>
+    <div class="row">
+      <div class="field"><label>A_d [m²]</label>${num('o_A_d', o.A_d)}</div>
+      <div class="field"><label>A_b [m²]</label>${num('o_A_b', o.A_b)}</div>
+      <div class="field"><label>b [m]</label>${num('o_b', o.b)}</div>
+      <div class="field"><label>α</label>${num('o_alpha', o.alpha)}</div>
+      <div class="field"><label>e/r</label>${num('o_e_over_r', o.e_over_r)}</div>
+    </div>
+    <div class="row">
+      <div class="field"><label>w [kN/m]</label>${num('o_w', o.w)}</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>Ύψη ορόφων (ένα ανά γραμμή, m)</h4>
+    <textarea id="o_floors" style="width:100%;min-height:120px" placeholder="4.2&#10;3.8&#10;...">${esc(o.floor_heights)}</textarea>
+    <div class="small muted">Χρησιμοποιούνται για μετατροπή της θεωρητικής θέσης σε πραγματικό όροφο.</div>
+  </div>
+
+  <div class="card">
+    <h4>Τιμές e/r για το δεύτερο διάγραμμα</h4>
+    <input type="text" id="o_eccs" value="${esc(o.eccs || '0, 1.52, 2.13, 2.85, 3.80, 4.75')}" style="width:100%">
+  </div>
+
+  <div class="row">
+    <button class="btn primary" data-act="o-compute">Υπολογισμός Βέλτιστης Θέσης</button>
+  </div>
+
+  <div id="o_results"></div>
+  <div id="o_chart1_host" class="chart-host"></div>
+  <div id="o_chart2_host" class="chart-host"></div>
+  `;
+  // bind compute
+}
+
+async function computeOuTrigger() {
+  const o = O();
+  // collect
+  o.system = $('#o_system').value;
+  o.auto_ga = $('#o_auto_ga').checked;
+  const g = (id) => { const el = $('#' + id); return el ? el.value : ''; };
+  o.H = g('o_H'); o.EI_w = g('o_EI_w'); o.EI_o = g('o_EI_o'); o.EI_c = g('o_EI_c'); o.GA_o = g('o_GA_o');
+  o.E = g('o_E'); o.d = g('o_d'); o.a = g('o_a'); o.h = g('o_h');
+  o.A_d = g('o_A_d'); o.A_b = g('o_A_b'); o.b = g('o_b'); o.alpha = g('o_alpha'); o.e_over_r = g('o_e_over_r');
+  o.w = g('o_w');
+  o.floor_heights = $('#o_floors').value;
+  o.eccs = $('#o_eccs').value;
+  const params = {
+    system: o.system,
+    auto_ga: o.auto_ga,
+    H: parseNum(o.H),
+    EI_w: parseNum(o.EI_w),
+    EI_o: parseNum(o.EI_o),
+    EI_c: parseNum(o.EI_c),
+    GA_o: o.GA_o === '' ? null : parseNum(o.GA_o),
+    E: parseNum(o.E),
+    d: parseNum(o.d),
+    a: parseNum(o.a),
+    h: parseNum(o.h),
+    A_d: parseNum(o.A_d),
+    A_b: parseNum(o.A_b),
+    b: parseNum(o.b),
+    alpha: parseNum(o.alpha),
+    e_over_r: parseNum(o.e_over_r),
+    w: parseNum(o.w),
+    floor_heights: o.floor_heights,
+    eccentricities: o.eccs.split(/[,\s]+/).filter(Boolean).map(parseNum).filter((v) => v !== null),
+  };
+  try {
+    const r = await api('/api/outrigger', { params: params, lang: LANG });
+    const res = r.result;
+    const host1 = $('#o_chart1_host'); if (host1) host1.innerHTML = r.svg1;
+    const host2 = $('#o_chart2_host'); if (host2) host2.innerHTML = r.svg2;
+    const el = $('#o_results');
+    if (el) {
+      el.innerHTML = `
+      <div class="card">
+        <h4>Αποτελέσματα</h4>
+        <div class="row"><b>δ_s:</b> ${fnum(res.delta_s, 6)} &nbsp; <b>GA_o:</b> ${fnum(res.GA_o, 6)}</div>
+        <div class="row"><b>S_h:</b> ${fnum(res.S_h, 6)} &nbsp; <b>S_v:</b> ${fnum(res.S_v, 6)} &nbsp; <b>ω:</b> ${fnum(res.omega, 6)}</div>
+        <div class="row"><b>x/H (βέλτιστο):</b> ${fnum(res.xbar_opt, 6)} &nbsp; <b>x:</b> ${fnum(res.x, 3)} m &nbsp; <b>z:</b> ${fnum(res.z, 3)} m</div>
+        <div class="row"><b>y_top (βέλτιστο):</b> ${fnum(res.y_top_opt, 6)} m</div>
+        <div class="row"><b>Πλησιέστερος όροφος:</b> ${res.floor_info.storey !== null ? res.floor_info.storey : '—'} (στάθμη ${fnum(res.floor_info.level, 3)} m, απόκλιση ${fnum(res.floor_info.deviation, 3)} m)</div>
+        ${res.floor_info.neighbors && res.floor_info.neighbors.length ? '<div class="row"><b>Γειτονικοί:</b> ' + res.floor_info.neighbors.map(n => n.storey + ' (' + fnum(n.level,3) + ' m)').join(', ') + '</div>' : ''}
+      </div>`;
+    }
+  } catch (e) {
+    toast(t('err_calc', { msg: e.message }), true);
+  }
 }
 
 /* go --------------------------------------------------------------- */

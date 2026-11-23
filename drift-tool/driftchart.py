@@ -271,7 +271,7 @@ def render_svg(
             out.append(f'<line x1="{lx:.2f}" y1="{plot_top}" x2="{lx:.2f}" '
                        f'y2="{plot_bottom}" stroke="#d32020" stroke-width="2" '
                        f'stroke-dasharray="7 4" class="limit-line"/>')
-            label = f"{L['limit']} {fmt_num(limit, 4, comma=comma)}"
+            label = f"{L['limit']} {fmt_num(limit, 5, comma=comma)}"
             tw = 7.2 * len(label) + 10
             ly = plot_top + 4
             out.append(f'<rect x="{lx - tw - 5:.2f}" y="{ly - 11}" width="{tw:.1f}" '
