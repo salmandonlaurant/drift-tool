@@ -879,9 +879,13 @@ function onInput(e) {
     return;
   }
   if (t.id === 'limitInput') {
-    const p = limitPreview(t.value, null);
+    const p = limitPreview(t.value, activeDiagram().limit);
     const pill = $('#limitPill');
     if (pill) { pill.textContent = p.text; pill.className = 'pill ' + (p.err ? 'err' : 'ok'); }
+    const d = activeDiagram();
+    d.limit_input = t.value;
+    d.limit = (p.value === undefined) ? (p.err ? null : d.limit) : p.value;
+    softRefresh();
     return;
   }
   if (t.dataset.bind) {
