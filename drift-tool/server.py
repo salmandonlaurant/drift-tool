@@ -31,8 +31,9 @@ app.config["JSON_SORT_KEYS"] = False
 
 @app.after_request
 def no_cache(resp):
-    if request.path.startswith("/api/"):
-        resp.headers["Cache-Control"] = "no-store"
+    resp.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
+    resp.headers["Pragma"] = "no-cache"
+    resp.headers["Expires"] = "0"
     return resp
 
 
